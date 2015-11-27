@@ -37,6 +37,7 @@ set backspace=2 " make backspace work like most other apps
 set laststatus=2 " Shows the current mode, filename, file status, ruler etc
 set undofile
 let mapleader="," 
+set lines=50 columns=100
 " Font choices - checks if linux/Mac and set appropriate font
 if has("gui_running")
     set guifont=Droid\ Sans\ Mono\ 11
@@ -83,8 +84,8 @@ set expandtab
 """"""""""""""""""""""
 
 " Turns off default regex characters and makes searches use normal regexes.
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 " make Vim deal with case-sensitive search intelligently. 
 " If you search for an all-lowercase string your search will be 
 " case-insensitive, but if one or more characters is uppercase 
