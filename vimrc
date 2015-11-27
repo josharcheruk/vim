@@ -44,6 +44,14 @@ elseif has("gui_macvim")
     set guifont=Courier\ New:h16
 endif
 
+if has("gui_running")
+    if has("gui_gtk2")
+    :set guifont=Droid\ Sans\ Mono\ 11
+    elseif has("gui_macvim")
+    set guifont=Courier\ New:h16
+    endif
+endif
+
 """"""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""
