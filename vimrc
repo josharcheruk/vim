@@ -37,6 +37,7 @@ set backspace=2 " make backspace work like most other apps
 set laststatus=2 " Shows the current mode, filename, file status, ruler etc
 set undofile
 let mapleader="," 
+set guifont=Courier\ New:h16
 
 """"""""""""""""""""""
 " NERDTree
