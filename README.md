@@ -10,7 +10,7 @@
 
 #### Symlink ~/.vim/vimrc to ~/.vimrc
 
-`ln -s ~/.vim/vimrc to ~/.vimrc`
+`ln -s ~/.vim/vimrc ~/.vimrc`
 
 #### Clone Vundle to ~/.vim
 
