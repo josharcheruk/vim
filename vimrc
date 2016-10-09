@@ -39,20 +39,16 @@ set undofile
 let mapleader="," 
 set lines=50 columns=100
 " Font choices - checks if linux/Mac and set appropriate font
-if has("gui_running")
-    set guifont=Droid\ Sans\ Mono\ 11
-elseif has("gui_macvim")
-    set guifont=Courier\ New:h16
-endif
 
 if has("gui_running")
-    if has("gui_gtk2")
-    :set guifont=Droid\ Sans\ Mono\ 11
-    elseif has("gui_macvim")
-    set guifont=Courier\ New:h16
-    endif
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ Medium\ 14
+  elseif has("gui_photon")
+    set guifont=Inconsolata\ Medium:s14
+  else
+  set guifont=Inconsolata_Medium:h14:cDEFAULT
+  endif
 endif
-
 """"""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""
