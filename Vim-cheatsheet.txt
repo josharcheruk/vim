@@ -1,0 +1,72 @@
+Vim Commands
+------------
+
+/               Search forwards
+?               Search Backwards
+Ctrl+o          Back to previous line you were on
+Ctrl+i          Forward to previous line you were on
+%               Jump to matching bracket
+Shift+g (G)     Go to end of file
+Number+(G)      Jump to that line e.g. 435G = go to line 435
+Ctrl+g          Show location (line in file and file path)
+gg              Go to top of file
+v               Visual select
+:r FILENAME     Retrieves the file FILENAME and inserts it
+:r !dir         Reads the output of the `dir` command and inserts it
+:w FILENAME     Write out the contents to FILENAME
+o               Open line below the cursor
+Shift+o (O)     Open line below the cursor
+a               Append text AFTER the cursor position
+A               Append at the end of the line
+w               Move to beginning of next word
+e               Move to end of next word
+b               Move to start of previous word
+0               Move to end of line
+$               Move to start of line
+d               Delete - combine with others to do more e.g. dw = delete word
+p               Put (or paste)
+y               Yank to buffer (copy?) selected text
+r               Replace one character e.g. rx replaces current position with x
+R               Replace more then one character (basically overwrite mode)
+c               Change
+
+
+
+Special note on these
+---------------------
+
+Vim uses undo branches, not a linear history. This means that you can undo in
+different ways to 'normal' programmes. More reading needed but essentially 
+switching into and out of INSERT mode will create a new branch along which to 
+perform undos. 
+
+Not sure yet how to move between branches yet. 
+
+u               Undo last commands
+U               Undo all changes since last insert mode on current line
+Ctrl+r          Redo
+
+Substitute
+----------
+
+:s/old/new      To substitute new for the first old in a line    
+:s/old/new/g    To substitute new for all 'old's on a line       
+:#,#s/old/new/g To substitute phrases between two line #'s       
+:%s/old/new/g   To substitute all occurrences in the file        
+:%s/old/new/gc  To ask for confirmation each time add 'c'            
+
+External Commands
+-----------------
+
+:!              Type that and then enter the bash command e.g. 'ls'
+
+Selecting text to write
+-----------------------
+
+You can write to a new file by selecting text using `v` and then `:w FILENAME`
+to write the selected text out to FILENAME.
+
+
+
+
+
