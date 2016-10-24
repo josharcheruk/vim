@@ -37,7 +37,7 @@ set backspace=2 " make backspace work like most other apps
 set laststatus=2 " Shows the current mode, filename, file status, ruler etc
 set undofile
 let mapleader="," 
-set lines=50 columns=100
+set lines=40 columns=100
 " Font choices - checks if linux/Mac and set appropriate font
 
 if has("gui_running")
@@ -104,8 +104,8 @@ nnoremap <leader><space> :noh<cr>
 """"""""""""""""""""""
 
 " set wrap
-set linebreak
-set textwidth=79
+" set linebreak
+" set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=80
 
