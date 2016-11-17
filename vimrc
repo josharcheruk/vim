@@ -45,6 +45,8 @@ if has("gui_running")
     set guifont=Inconsolata\ Medium\ 14
   elseif has("gui_photon")
     set guifont=Inconsolata\ Medium:s14
+  elseif has("gui_macvim")
+    set guifont=Menlo:h18
   else
   set guifont=Inconsolata_Medium:h14:cDEFAULT
   endif
@@ -58,7 +60,7 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 """"""""""""""""""""""
 " Syntax/Colour
 """"""""""""""""""""""
-
+syntax on
 set background=dark
 set t_Co=256
 colorscheme desert
