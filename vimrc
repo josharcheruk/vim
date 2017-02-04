@@ -42,11 +42,13 @@ set lines=40 columns=100
 
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ Medium\ 14
+    set guifont=Ubuntu\ Mono\ 15
   elseif has("gui_photon")
-    set guifont=Inconsolata\ Medium:s14
+    set guifont=Ubuntu\ Mono:s15
+  elseif has("gui_macvim")
+    set guifont=Menlo:h18
   else
-  set guifont=Inconsolata_Medium:h14:cDEFAULT
+  set guifont=Ubuntu_Mono:h15:cDEFAULT
   endif
 endif
 " Makes tabs into spaces
@@ -66,7 +68,7 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 """"""""""""""""""""""
 " Syntax/Colour
 """"""""""""""""""""""
-
+syntax on
 set background=dark
 set t_Co=256
 colorscheme desert
