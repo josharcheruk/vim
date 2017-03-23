@@ -6,7 +6,7 @@
 
 #### Clone vim repo to ~/.vim
 
-`git clone git@github.com:puffinblue/vim.git ~/.vim`
+`git clone https://github.com/PuffinBlue/vim.git ~/.vim`
 
 #### Symlink ~/.vim/vimrc to ~/.vimrc
 
