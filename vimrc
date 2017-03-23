@@ -11,6 +11,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'itchyny/lightline.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +52,7 @@ if has("gui_running")
   elseif has("gui_photon")
     set guifont=Ubuntu\ Mono:s15
   elseif has("gui_macvim")
-    set guifont=Menlo:h18
+    set guifont=Menlo:h1
   else
   set guifont=Ubuntu_Mono:h15:cDEFAULT
   endif
@@ -62,8 +68,14 @@ set expandtab
 """"""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""
-
 nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <F5> :NERDTreeToggle<CR>
+
+""""""""""""""""""""""
+" ctrlp
+""""""""""""""""""""""
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_show_hidden = 1
 
 """"""""""""""""""""""
 " Syntax/Colour
