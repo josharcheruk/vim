@@ -17,6 +17,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'mattn/emmet-vim'
+Plugin 'changa/desert256.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,7 +44,7 @@ set backspace=2 " make backspace work like most other apps
 set laststatus=2 " Shows the current mode, filename, file status, ruler etc
 set undofile
 let mapleader="," 
-set lines=40 columns=100
+" set lines=40 columns=100
 " Font choices - checks if linux/Mac and set appropriate font
 
 if has("gui_running")
@@ -83,7 +84,7 @@ let g:ctrlp_show_hidden = 1
 syntax on
 set background=dark
 set t_Co=256
-colorscheme desert
+colorscheme desert256
 " Following tells vim .md is the same as .markdown
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " Enables markdown fenced code block highlighting
