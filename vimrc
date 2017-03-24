@@ -44,7 +44,7 @@ set backspace=2 " make backspace work like most other apps
 set laststatus=2 " Shows the current mode, filename, file status, ruler etc
 set undofile
 let mapleader="," 
-" set lines=40 columns=100
+set lines=40 columns=100
 " Font choices - checks if linux/Mac and set appropriate font
 
 if has("gui_running")
