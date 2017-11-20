@@ -1,5 +1,7 @@
-bundle/**
-*.swp
-*.swo
-*~
-*.netrwhist
+# Ignore everything
+*
+# But not these files
+!.gitignore
+!.vimrc
+!README.md
+!Vim-cheatsheet.txt
