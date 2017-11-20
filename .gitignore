@@ -2,6 +2,6 @@
 *
 # But not these files
 !.gitignore
-!.vimrc
+!vimrc
 !README.md
 !Vim-cheatsheet.txt
