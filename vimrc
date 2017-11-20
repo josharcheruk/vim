@@ -2,25 +2,48 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'itchyny/lightline.vim'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'mattn/emmet-vim'
-Plugin 'changa/desert256.vim'
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-surround'
+"Plugin 'itchyny/lightline.vim'
+"Plugin 'jeetsukumaran/vim-buffergator'
+"Plugin 'mattn/emmet-vim'
+"Plugin 'changa/desert256.vim'
+"Plugin 'ap/vim-buftabline'
+"Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+"call vundle#end()            " required
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'itchyny/lightline.vim'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'ap/vim-buftabline'
+Plug 'altercation/vim-colors-solarized'
+
+" Initialize plugin system
+call plug#end()
+
 filetype plugin indent on    " required
 
 """"""""""""""""""""""
@@ -31,46 +54,56 @@ set encoding=utf-8
 set scrolloff=3 " Forces 3 lines to be visible when scrolling
 set autoindent " Indents line to the same level as current when hit enter
 set showmode " Shows which mode you are in (e.g Visual)
-set showcmd " Shows 'count' in bottom of window (e.g. 6j - it'll show the 6)
 set hidden " Allow open new buffer without writing current one (hides current)
 set wildmenu " Auto complete Vim commands using tab key (or list of options)
 set wildmode=list:longest 
 set relativenumber " Display relative line numbers
 set number " Display absolute line number of current line
-set visualbell " Flash on error
 set ttyfast " Speeds up vim basically
-set ruler " outputs cursor position in the bottom right of window
 set backspace=2 " make backspace work like most other apps
 set laststatus=2 " Shows the current mode, filename, file status, ruler etc
 set undofile
+set belloff=all
 let mapleader="," 
-set lines=40 columns=100
+
+"""""""""""""""""
+" Key remapping
+"""""""""""""""""
+" Navigating windows with ctrl + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Allows cycling through tabs with ctrl-n/ctrl-p
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-M> :bprev<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Font choices - checks if linux/Mac and set appropriate font
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Ubuntu\ Mono\ 15
+    set guifont=Ubuntu\ Mono\ 14
   elseif has("gui_photon")
-    set guifont=Ubuntu\ Mono:s15
+    set guifont=Ubuntu\ Mono:s14
   elseif has("gui_macvim")
     set guifont=Menlo:h1
   else
-  set guifont=Ubuntu_Mono:h15:cDEFAULT
+  set guifont=Ubuntu_Mono:h14:cDEFAULT
   endif
+  set lines=50 columns=120
 endif
-" Makes tabs into spaces
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
+
 """"""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <F5> :NERDTreeToggle<CR>
+if has("gui_running")
+    autocmd VimEnter * NERDTree
+endif
 
 """"""""""""""""""""""
 " ctrlp
@@ -84,7 +117,7 @@ let g:ctrlp_show_hidden = 1
 syntax on
 set background=dark
 set t_Co=256
-colorscheme desert256
+colorscheme solarized
 " Following tells vim .md is the same as .markdown
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " Enables markdown fenced code block highlighting
