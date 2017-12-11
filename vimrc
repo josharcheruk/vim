@@ -84,7 +84,7 @@ nnoremap <C-M> :bprev<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has("gui_running")
-  if has("gui_gtk2")
+  if has("gui_gtk3")
     set guifont=Ubuntu\ Mono\ 14
   elseif has("gui_photon")
     set guifont=Ubuntu\ Mono:s14
