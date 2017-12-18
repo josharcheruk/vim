@@ -40,6 +40,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ap/vim-buftabline'
 Plug 'altercation/vim-colors-solarized'
+Plug 'qpkorr/vim-bufkill'
 
 " Initialize plugin system
 call plug#end()
@@ -78,6 +79,10 @@ nnoremap <C-l> <C-w>l
 " Allows cycling through tabs with ctrl-n/ctrl-p
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-M> :bprev<CR>
+
+" [s and ]s to navigate. z= to bring up suggestions whilst on word
+ nnoremap <leader>sp :setlocal spell spelllang=en_gb<CR>
+ nnoremap <leader>spo :set nospell<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Font choices - checks if linux/Mac and set appropriate font
