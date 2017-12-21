@@ -41,6 +41,7 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ap/vim-buftabline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'qpkorr/vim-bufkill'
+Plug 'mattn/emmet-vim'
 
 " Initialize plugin system
 call plug#end()
