@@ -97,7 +97,7 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo:h1
   else
-  set guifont=Ubuntu_Mono:h14:cDEFAULT
+  set guifont=Ubuntu\ Mono\ 14
   endif
   set lines=50 columns=120
 endif
